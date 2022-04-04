@@ -1,0 +1,47 @@
+/*
+ ============================================================================
+ Dante Saldivar
+ Ejercicio1_2
+ Ingresar 5 números. Determinar cuál es el máximo
+ y el mínimo e indicar en qué orden fue ingresado.
+ Division H
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(void) {
+
+	int numeroIngresado;
+	int totalNumeros;
+	int numeroMaximo;
+	int numeroMinimo;
+	char banderaPrimero;
+
+	banderaPrimero='i';
+
+	for(totalNumeros=0;totalNumeros<5;totalNumeros++)
+	{
+		if (banderaPrimero=='i')
+		{
+			numeroMaximo=numeroIngresado;
+			numeroMinimo=numeroIngresado;
+			banderaPrimero='o';
+		}
+		else
+		{
+			if(numeroMaximo<numeroIngresado)
+			{
+				numeroMaximo=numeroIngresado;
+			}
+			if(numeroMinimo>numeroIngresado)
+			{
+				numeroMinimo=numeroIngresado;
+			}
+		}
+	}
+
+	return 0;
+}

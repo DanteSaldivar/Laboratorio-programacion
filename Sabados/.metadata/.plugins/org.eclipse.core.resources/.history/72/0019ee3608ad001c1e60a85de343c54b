@@ -1,0 +1,63 @@
+/*
+ ============================================================================
+ Dante Saldivar
+
+ Division H
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+int main(void) {
+
+	int numeroIngresado;
+	int sumaNumerosPositivos;
+	int sumaNumerosNegativos;
+	int contadorPositivos;
+	int contadorNegativos;
+	char respuestaIngresada;
+	float promedioPositivos;
+	float promedioNegativos;
+
+	sumaNumerosPositivos=0;
+	sumaNumerosNegativos=0;
+	contadorPositivos=0;
+	contadorNegativos=0;
+	respuestaIngresada='s';
+
+	while(respuestaIngresada=='s')
+	{
+		printf("Ingrese el numero que desee:\n");
+		scanf("%d",&numeroIngresado);
+
+		if (numeroIngresado>0)
+		{
+			contadorPositivos++;
+			sumaNumerosPositivos+=numeroIngresado;
+		}
+		else
+		{
+			contadorNegativos++;
+			sumaNumerosNegativos+=numeroIngresado;
+		}
+
+		printf("\nDesea seguir ingresando datos? s/n\n");
+		__fpurge(stdin);
+		scanf("%c",&respuestaIngresada);
+		while(respuestaIngresada!='n'||respuestaIngresada!='s')
+		{
+			printf("\nResponder 'n' para salir, 's' para continuar");
+			__fpurge(stdin);
+			scanf("%c",&respuestaIngresada);
+		}
+	}
+
+	promedioPositivos=(float)sumaNumerosPositivos/contadorPositivos;
+	promedioNegativos=(float)sumaNumerosNegativos/contadorNegativos;
+
+	printf("\nEl promedio de numeros positivos es: %.2f",promedioPositivos);
+	printf("\nEl promedio de numeros negativos es: %.2f",promedioNegativos);
+
+	return 0;
+}

@@ -1,0 +1,48 @@
+/*
+ ============================================================================
+ Dante Saldivar
+
+ Division H
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+int main(void) {
+
+	int numeroIngresado;
+	int sumaNumerosPositivos;
+	int sumaNumerosNegativos;
+	int contadorPositivos;
+	int contadorNegativos;
+	char respuestaIngresada;
+	float promedioPositivos;
+	float promedioNegativos;
+
+	sumaNumerosPositivos=0;
+	sumaNumerosNegativos=0;
+	contadorPositivos=0;
+	contadorNegativos=0;
+
+	do{
+		printf("Ingrese el numero que desee:\n");
+		scanf("%d",numeroIngresado);
+
+		if (numeroIngresado>0){
+			contadorPositivos++;
+			sumaNumerosPositivos+=numeroIngresado;
+		}else{
+			contadorNegativos++;
+			sumaNumerosNegativos+=numeroIngresado;
+		}
+
+		printf("\nDesea seguir ingresando datos? s/n");
+		__purgef(stdin);
+		scanf("%c",&respuestaIngresada);
+
+	}while(respuestaIngresada!='n');
+
+
+	return 0;
+}
